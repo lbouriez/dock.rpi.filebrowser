@@ -3,11 +3,16 @@ MAINTAINER blog.midaug.win
 
 RUN [ "cross-build-start" ]
 
+ENV VERSION 1.9.0
+
+ADD https://github.com/filebrowser/filebrowser/releases/download/v${VERSION}/linux-armv7-filebrowser.tar.gz /usr/local/bin/dep/filebrowser.tar.gz
+
 COPY . /go/src/github.com/filebrowser/filebrowser
 
 WORKDIR /go/src/github.com/filebrowser/filebrowser
 RUN apk --no-cache --update upgrade && apk --no-cache add ca-certificates git curl && \
-  curl -fsSL -o /usr/local/bin/dep https://github.com/golang/dep/releases/download/v0.5.0/dep-linux-arm64 && \
+  tar -xzvf filebrowser.tar.gz -C /usr/local/bin/dep \
+  rm /usr/local/bin/dep/filebrowser.tar.gz \
   chmod +x /usr/local/bin/dep
 RUN dep ensure -vendor-only
 
