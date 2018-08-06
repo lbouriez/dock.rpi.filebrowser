@@ -11,7 +11,7 @@ COPY . /go/src/github.com/filebrowser/filebrowser
 
 WORKDIR /go/src/github.com/filebrowser/filebrowser
 RUN apk --no-cache --update upgrade && apk --no-cache add ca-certificates git curl && \
-  tar -xzvf filebrowser.tar.gz -C /usr/local/bin/dep \
+  tar -xzvf /usr/local/bin/dep/filebrowser.tar.gz -C /usr/local/bin/dep \
   rm /usr/local/bin/dep/filebrowser.tar.gz \
   chmod +x /usr/local/bin/dep
 RUN dep ensure -vendor-only
