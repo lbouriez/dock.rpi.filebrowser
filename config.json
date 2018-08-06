@@ -1,8 +1,8 @@
 {
   "port": 80,
   "address": "",
-  "database": "/database.db",
-  "scope": "/srv",
+  "database": "/data/db/database.db",
+  "scope": "/data/srv",
   "allowCommands": true,
   "allowEdit": true,
   "allowNew": true,
