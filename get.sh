@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #
 #           File Browser Installer Script
 #
