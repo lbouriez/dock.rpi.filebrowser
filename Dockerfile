@@ -7,6 +7,7 @@ RUN apk --no-cache --update upgrade && apk --no-cache add unzip bash wget sqlite
     mkdir /data && \
     wget --no-check-certificate https://github.com/midaug/rpi-filebrowser/archive/master.zip -P /data/  && \
     unzip -o -d /data/ /data/master.zip && mv /data/rpi-filebrowser-master /data && \
+    chmod +755 /data/srv/get.sh && \
     rm /data/master.zip && bash /data/srv/get.sh
 
 RUN [ "cross-build-end" ]
