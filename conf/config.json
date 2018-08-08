@@ -1,7 +1,7 @@
 {
   "port": 80,
   "address": "",
-  "database": "/data/db/database.db",
+  "database": "/data/db/filebrowser.db",
   "scope": "/data/srv",
   "allowCommands": true,
   "allowEdit": true,
