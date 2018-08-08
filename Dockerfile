@@ -7,7 +7,7 @@ RUN apk --no-cache --update upgrade && apk --no-cache add curl wget && \
     curl -fsSL https://raw.githubusercontent.com/midaug/rpi-filebrowser/master/get.sh | bash
 
 RUN mkdir -p /data/conf && mkdir -p /data/db && mkdir -p /data/srv  && \
-    wget https://raw.githubusercontent.com/midaug/rpi-filebrowser/master/config.json /data/conf
+    wget -O /data/conf/config.json https://raw.githubusercontent.com/midaug/rpi-filebrowser/master/config.json
 
 RUN [ "cross-build-end" ]
 
