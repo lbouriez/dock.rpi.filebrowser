@@ -10,4 +10,4 @@ COPY get.sh .
 RUN chmod +x ./* && bash /install/get.sh \
   && rm /install/get.sh
 
-ENTRYPOINT ["filebrowser", "--config", "/data/config.json"]
+ENTRYPOINT ["filebrowser", "--old.config", "/data/config.json"]
