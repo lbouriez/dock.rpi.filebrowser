@@ -1,15 +1,13 @@
 FROM resin/armhf-alpine:latest
-MAINTAINER blog.midaug.win
 
 RUN apk --no-cache --update upgrade && apk --no-cache add unzip bash wget sqlite ca-certificates  && \
-    mkdir /data
-WORKDIR /data
-ADD ./data/ /data
-COPY get.sh .
-RUN chmod +x ./* && bash /data/get.sh \
-  && rm /data/get.sh
+    mkdir /data && mkdir /install
 
-VOLUME /data
-EXPOSE 80
+ADD data /data/
+
+WORKDIR /install
+COPY get.sh .
+RUN chmod +x ./* && bash /install/get.sh \
+  && rm /data/get.sh
 
 ENTRYPOINT ["filebrowser", "--config", "/data/config.json"]
