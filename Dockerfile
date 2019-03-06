@@ -8,6 +8,6 @@ ADD data /data/
 WORKDIR /install
 COPY get.sh .
 RUN chmod +x ./* && bash /install/get.sh \
-  && rm /install/get.sh && ls /data
+  && rm /install/get.sh
 
 ENTRYPOINT ["filebrowser", "--config", "/data/config.json"]
