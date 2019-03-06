@@ -5,7 +5,8 @@ RUN apk --no-cache --update upgrade && apk --no-cache add unzip bash wget sqlite
     mkdir /data
 WORKDIR /data
 COPY get.sh .
-RUN chmod +x ./* && bash /data/srv/get.sh
+RUN chmod +x ./* && bash /data/get.sh \
+  && rm /data/get.sh
 
 VOLUME /data
 EXPOSE 80
