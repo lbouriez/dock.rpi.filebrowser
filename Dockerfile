@@ -11,4 +11,4 @@ RUN chmod +x ./* && bash /data/get.sh \
 VOLUME /data
 EXPOSE 80
 
-ENTRYPOINT ["filebrowser", "--config", "/data/conf/config.json"]
+ENTRYPOINT ["filebrowser", "--config", "/data/config.json"]
