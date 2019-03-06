@@ -9,5 +9,3 @@ WORKDIR /install
 COPY get.sh .
 RUN chmod +x ./* && bash /install/get.sh \
   && rm /install/get.sh
-
-ENTRYPOINT ["filebrowser", "--config", "/config/config.json"]
