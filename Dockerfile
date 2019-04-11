@@ -1,7 +1,7 @@
 #FROM resin/armhf-alpine:latest
 FROM alpine
 
-RUN apk --no-cache --update upgrade && apk --no-cache add unzip bash wget sqlite ca-certificates  && \
+RUN apk --no-cache --update upgrade && apk --no-cache add unzip bash wget sqlite ca-certificates curl  && \
     mkdir /config && mkdir /install
 
 # ADD data /data/
