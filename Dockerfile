@@ -1,13 +1,10 @@
 #FROM resin/armhf-alpine:latest
-FROM scratch
-
+FROM alpine:latest
 
 RUN apk --no-cache --update upgrade && apk --no-cache \
     add unzip bash wget sqlite ca-certificates curl && \
     mkdir /config && mkdir /install && \
     rm -rf /var/cache/apk/*
-
-# ADD data /data/
 
 WORKDIR /install
 COPY get.sh .
