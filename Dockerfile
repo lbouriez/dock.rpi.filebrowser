@@ -1,5 +1,6 @@
 #FROM resin/armhf-alpine:latest
-FROM alpine
+FROM scratch
+
 
 RUN apk --no-cache --update upgrade && apk --no-cache \
     add unzip bash wget sqlite ca-certificates curl && \
